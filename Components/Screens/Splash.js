@@ -1,21 +1,29 @@
 import { View, Text, StyleSheet, Image } from 'react-native'
-import React from 'react'
+import React, { useEffect } from 'react'
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import { useNavigation } from '@react-navigation/native';
 
 const Splash = () => {
-  return (
-    <View style={styles.container}>
-        <View style={styles.upperContainer}>
-            <Image source={require('../Resorces/lock.png')} style={styles.lockIcon}/>
-            <Text style={styles.title}>WhatsApp Locked</Text>
-        </View>
-        <View style={styles.lowerContainer}>
-            <Image source={require('../Resorces/fingerprint.png')} style={styles.fingerIcon}/>
-            <Text style={styles.SubTitle}>Touch the fingerprint sensor</Text>
-        </View>
+    const navigation = useNavigation()
+        useEffect(() => {
+        setTimeout(() => {
+        navigation.navigate("Chats");
+        }, 2000);
+    })
 
-    </View>
-  )
+    return (
+        <View style={styles.container}>
+            <View style={styles.upperContainer}>
+                <Image source={require('../Resorces/lock.png')} style={styles.lockIcon}/>
+                <Text style={styles.title}>WhatsApp Locked</Text>
+            </View>
+            <View style={styles.lowerContainer}>
+                <Image source={require('../Resorces/fingerprint.png')} style={styles.fingerIcon}/>
+                <Text style={styles.SubTitle}>Touch the fingerprint sensor</Text>
+            </View>
+
+        </View>
+    )
 }
 
 export default Splash

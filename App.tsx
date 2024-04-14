@@ -1,12 +1,11 @@
 import { View, Text } from 'react-native'
 import React from 'react'
-import Splash from './Components/Screens/Splash'
-import Chats from './Components/Screens/Chats'
+import MainNavigator from './Components/Navigator/MainNavigator'
 
-export default function App() {
+const App = () => {
   return (
-    <View style={{flex: 1}}>
-      <Splash />
-    </View>
+    <MainNavigator/>
   )
 }
+
+export default App
